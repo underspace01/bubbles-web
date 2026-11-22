@@ -43,16 +43,23 @@ HDRを含むため、バッチビルドでもグラフィックスを有効に�
 
 `docs/build-info.json`と`window.bubbleBuildId`でビルドを識別できます。コードやシェーダー変更後は再ビルドと準備コマンドの両方を実行してください。
 
-## GitHubでの公開
+## 公開先と更新手順
 
-公開操作はまだ行っていません。公開するときに次を実施します。
+GitHubリポジトリとWebアプリは公開済みです。
 
-1. GitHubに公開リポジトリを作成し、このリポジトリをpushします。`docs/`もコミットに含めます。
-2. GitHubの **Settings > Pages > Build and deployment > Source** を **GitHub Actions** に設定します。
-3. **Actions > Publish Web player to GitHub Pages > Run workflow** から公開するブランチを選んで実行します。
-4. 成功後、ワークフローに表示されるPages URLを開きます。
+- [ソースコード](https://github.com/underspace01/bubbles-web)
+- [Webアプリを開く](https://underspace01.github.io/bubbles-web/)
+- [公開ワークフロー](https://github.com/underspace01/bubbles-web/actions/workflows/pages.yml)
 
-ワークフローは手動実行のみです。pushだけではPagesを更新しません。Unityのビルドはローカルで行うため、ActionsへのUnityライセンス登録は不要です。更新時もローカルでビルド・`docs/`更新・コミット・pushの後、手動で公開します。
+GitHub PagesはGitHub Actionsから`docs/`を配信する設定です。更新時は次の手順で反映します。
+
+1. UnityでWebビルドを作成し、`python3 Tools/package_web.py`で`docs/`を更新します。
+2. ローカルのブラウザーで起動・HDR背景・エラーの有無を確認します。
+3. 変更したソースと`docs/`をコミットし、`origin`の`main`へpushします。
+4. **Actions > Publish Web player to GitHub Pages > Run workflow**で`main`を選び、実行します。
+5. `prepare`と`deploy`の成功後、公開URLで動作を確認します。必要に応じて`build-info.json`でビルドIDを照合します。
+
+ワークフローは手動実行のみで、pushだけではWebアプリを更新しません。READMEなど文書だけの変更では、Webビルドと公開ワークフローの実行は不要です。Unityのビルドはローカルで行うため、ActionsへのUnityライセンス登録は不要です。
 
 設定の参照元: [GitHub公式: Pagesカスタムワークフロー](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
