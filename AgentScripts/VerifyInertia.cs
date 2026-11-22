@@ -58,7 +58,8 @@ public static class VerifyInertia
         }
 
         Check(ordered, "No size-speed inversion under continuous wind");
-        Check(Mathf.Abs(small.velocity.x - 600 * w.tuning.windGain) < .01f && Mathf.Abs(large.velocity.x - 600 * w.tuning.windGain) < .01f, "Same steady air velocity reached");
+        float expectedSpeed = Mathf.Min(600 * w.tuning.windGain, w.tuning.maximumSpeed);
+        Check(Mathf.Abs(small.velocity.x - expectedSpeed) < .01f && Mathf.Abs(large.velocity.x - expectedSpeed) < .01f, "大小とも速度上限を考慮した同じ風速に近づく");
         for (int i = 0; i < 15; i++)
         {
             Step(1f / 60, -600);

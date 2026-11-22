@@ -23,7 +23,7 @@ MonoBehaviour:
   growthPerSecond: 72
   autoSpawnSeconds: 7
   windRadiusScreenFraction: 0.25
-  windGain: 0.38
+  windGain: 0.57
   maximumSpeed: 310
   drag: 1.25
   edgeRestitution: 0.55

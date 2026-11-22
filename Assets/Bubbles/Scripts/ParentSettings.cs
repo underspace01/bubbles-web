@@ -14,11 +14,11 @@ namespace Bubbles
 
         private BubbleWorld world;
         private RectTransform safeRoot, gear, panel, content;
-        private
 #if UNITY_WEBGL && !UNITY_EDITOR
-        [DllImport("__Internal")] static extern float BubbleSafeInset(int edge);
+        [DllImport("__Internal")]
+        private static extern float BubbleSafeInset(int edge);
 #endif
-        GameObject shade;
+        private GameObject shade;
         private UnityEngine.UI.Image progress;
         private TextMeshProUGUI limitLabel;
         private UnityEngine.UI.Slider limit;

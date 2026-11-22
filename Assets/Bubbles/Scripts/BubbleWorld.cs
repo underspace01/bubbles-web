@@ -97,14 +97,17 @@ namespace Bubbles
         private float autoTime, pixelScale = 1;
         private long spawnSequence;
         private static readonly int ClockID = Shader.PropertyToID("_BubbleTime"), ShapeClockID = Shader.PropertyToID("_ShapeTime"), WobbleID = Shader.PropertyToID("_Wobble"), SeedID = Shader.PropertyToID("_Seed");
-        private
 #if UNITY_WEBGL && !UNITY_EDITOR
-        [DllImport("__Internal")] static extern float BubbleCssScale();
-        [DllImport("__Internal")] static extern float BubbleLoadSetting(int index,float fallback);
-        [DllImport("__Internal")] static extern void BubbleSaveLimit(int count);
-        [DllImport("__Internal")] static extern void BubbleSaveBackground(int index);
+        [DllImport("__Internal")]
+        private static extern float BubbleCssScale();
+        [DllImport("__Internal")]
+        private static extern float BubbleLoadSetting(int index,float fallback);
+        [DllImport("__Internal")]
+        private static extern void BubbleSaveLimit(int count);
+        [DllImport("__Internal")]
+        private static extern void BubbleSaveBackground(int index);
 #endif
-        void Awake()
+        private void Awake()
         {
             Application.targetFrameRate = Application.platform == RuntimePlatform.WebGLPlayer ? -1 : 60;
             try

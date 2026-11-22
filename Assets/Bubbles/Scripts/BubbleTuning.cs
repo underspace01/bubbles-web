@@ -13,7 +13,7 @@ namespace Bubbles
         public int maximumCount = 100;
         public float minimumRadius = 19, maximumDiameterWidthFraction = 2f / 3, growthPerSecond = 72, autoSpawnSeconds = 7;
         [Header("風と慣性")]
-        public float windRadiusScreenFraction = .25f, windGain = .38f, maximumSpeed = 310, drag = 1.25f, edgeRestitution = .55f;
+        public float windRadiusScreenFraction = .25f, windGain = .57f, maximumSpeed = 310, drag = 1.25f, edgeRestitution = .55f;
         public float windResponse = 4;
         [Header("タップへの応答")]
         public float tapSquash = .24f, tapDecay = 1.8f, tapFrequency = 18;
