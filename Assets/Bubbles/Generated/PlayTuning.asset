@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8852268c62bc46c5b08e9c1db0c8239, type: 3}
+  m_Name: PlayTuning
+  m_EditorClassIdentifier: Assembly-CSharp::Bubbles.BubbleTuning
+  holdSeconds: 0.28
+  tapSeconds: 0.28
+  movePixels: 12
+  settingsHoldSeconds: 0.75
+  refillMaximumCount: 3
+  maximumCount: 100
+  minimumRadius: 19
+  maximumDiameterWidthFraction: 0.6666667
+  growthPerSecond: 72
+  autoSpawnSeconds: 7
+  windRadiusScreenFraction: 0.25
+  windGain: 0.38
+  maximumSpeed: 310
+  drag: 1.25
+  edgeRestitution: 0.55
+  windResponse: 4
+  tapSquash: 0.24
+  tapDecay: 1.8
+  tapFrequency: 18
+  idleSwayPixels: 10
